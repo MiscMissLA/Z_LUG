@@ -1,6 +1,6 @@
-==============================
+
 Hackathon Pitch – Shape-from-Shading Solution
-==============================
+
 
 🔍 Problem: 
 Current lunar terrain reconstruction techniques using Shape-from-Shading (SfS) assume the Sun’s direction is known and accurate. However, this metadata is often noisy, missing, or incorrect — especially in older or polar mission datasets. This leads to inaccurate DEMs (Digital Elevation Models), especially in shadowed or complex lighting areas.
@@ -8,9 +8,9 @@ Current lunar terrain reconstruction techniques using Shape-from-Shading (SfS) a
 💡 Our Idea (Cause → Effect):
 We propose a method to **self-estimate the Sun’s direction directly from the image itself**, rather than blindly trusting the metadata. This allows us to apply SfS reliably even when the original data is missing, faulty, or distorted. As a result, we can generate **more accurate DEMs** using only a single mono image, with improved robustness to lighting errors and surface albedo variation.
 
-==============================
+
 1. Rough Idea (Pipeline)
-==============================
+
 1. **Input & Preprocessing**
    - Load mono lunar images (TMC-2, LRO NAC) with any available Sun metadata
    - Clean the image: remove striping/noise, convert brightness to reflectance
@@ -34,9 +34,8 @@ We propose a method to **self-estimate the Sun’s direction directly from the i
    - Package the result as a DEM GeoTIFF and 3D hillshade view
    - Optionally display in QGIS or browser for demo purposes
 
-==============================
 2. USP (Uniqueness)
-==============================
+
 ✅ We break the field’s assumption: “Sun direction is known.”
 ✅ We work with just **a single image** — no stereo required.
 ✅ We build an **adaptive and self-correcting SfS module**.
@@ -44,9 +43,8 @@ We propose a method to **self-estimate the Sun’s direction directly from the i
 ✅ The tool can be integrated into existing QGIS or mission pipelines.
 ✅ It is light enough to run on laptops and even onboard systems.
 
-==============================
 3. Plan for Hackathon
-==============================
+
 Goal: Submit the **idea with a proof-of-concept pipeline outline**. Actual implementation can follow.
 
 | Day | Task |
@@ -57,9 +55,9 @@ Goal: Submit the **idea with a proof-of-concept pipeline outline**. Actual imple
 
 Data required: 2–3 high-quality LRO NAC mono images with visible craters + LOLA DEM samples
 
-==============================
+
 4. Feasibility (Reality Check)
-==============================
+
 ✅ Yes — the idea is grounded in current challenges
 ✅ A demo of the Sun direction estimation method alone would be valuable
 ✅ SfS implementation can use existing solvers — not reinvented
